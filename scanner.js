@@ -11,6 +11,29 @@ startButton.onclick = function() {
   home.style.display = "none";
   loadDevicesAndPlay();
 }
+var fileInput = document.querySelector("#fileInput")
+fileInput.onchange = function(event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+				
+  reader.onload = function(e){
+    var img = document.getElementById("selectedImg");
+    img.src = e.target.result;
+    img.onload = async function() {
+      var detectedCodes = await barcodeDetector.detect(img);
+      var json = JSON.stringify(detectedCodes, null, 2);
+      console.log(json);
+      alert(json);
+    }
+  };
+		
+  reader.onerror = function () {
+    console.warn('oops, something went wrong.');
+  };
+		
+	reader.readAsDataURL(file);	
+}
+
 var closeButton = document.querySelector("#closeButton");
 closeButton.onclick = function() {
   clearInterval(interval);
