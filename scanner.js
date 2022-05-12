@@ -45,7 +45,7 @@ document.getElementById("cameraSelect").onchange = onCameraChanged;
 initBarcodeDetector();
 
 
-function initBarcodeDetector(){
+async function initBarcodeDetector(){
   var barcodeDetectorUsable = false;
   if ('BarcodeDetector' in window) {
     let formats = await window.BarcodeDetector.getSupportedFormats();
@@ -64,6 +64,8 @@ function initBarcodeDetector(){
     let reader = await barcodeDetector.init();
     console.log(reader); // You can modify the runtime settings of the reader instance.
   }
+  
+  document.getElementById("status").innerHTML = "";
 }
 
 function loadDevicesAndPlay(){

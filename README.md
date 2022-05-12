@@ -14,7 +14,7 @@ In addition, localhost or HTTPS are required to use this API.
 
 ## Polyfill
 
-If the browser does not support the API. The Dynamsoft Barcode Reader polyfill will be used.
+If the browser does not support the API, the Dynamsoft Barcode Reader polyfill will be used.
 
 Check out this repo to learn more: <https://github.com/xulihang/barcode-detector-polyfill>.
 
