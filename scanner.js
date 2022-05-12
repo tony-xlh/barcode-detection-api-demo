@@ -36,7 +36,6 @@ fileInput.onchange = function(event) {
 
 var closeButton = document.querySelector("#closeButton");
 closeButton.onclick = function() {
-  clearInterval(interval);
   stop();
   scannerContainer.style.display = "none";
   home.style.display = "";
@@ -112,6 +111,7 @@ function play(deviceId, HDUnsupported) {
 }
 
 function stop(){
+  clearInterval(interval);
   try{
       if (localStream){
           localStream.getTracks().forEach(track => track.stop());
