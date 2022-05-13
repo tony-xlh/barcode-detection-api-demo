@@ -160,7 +160,7 @@ function updateSVGViewBoxBasedOnVideoSize(){
 function startDecoding(){
   clearInterval(interval);
   //1000/25=40
-  interval = setInterval(decode, 500);
+  interval = setInterval(decode, 40);
 }
 
 async function decode(){
