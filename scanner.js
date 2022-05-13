@@ -77,17 +77,22 @@ function loadDevicesAndPlay(){
       navigator.mediaDevices.enumerateDevices().then(function(devices) {
           var count = 0;
           var cameraDevices = [];
+          var defaultIndex = 0;
           for (var i=0;i<devices.length;i++){
               var device = devices[i];
               if (device.kind == 'videoinput'){
                   cameraDevices.push(device);
                   var label = device.label || `Camera ${count++}`;
                   cameraselect.add(new Option(label,device.deviceId));
+                  if (label.toLowerCase().indexOf("back") != -1) {
+                    defaultIndex = cameraDevices.length - 1;
+                  }
               }
           }
 
           if (cameraDevices.length>0) {
-            play(cameraDevices[0].deviceId);
+            cameraselect.selectedIndex = defaultIndex;
+            play(cameraDevices[defaultIndex].deviceId);
           }else{
             alert("No camera detected.");
           }
