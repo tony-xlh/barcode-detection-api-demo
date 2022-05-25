@@ -1,0 +1,28 @@
+.fullscreen {
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+.overlay {
+  z-index:998;
+}
+
+#cameraSelect {
+  z-index:999;
+  position:absolute;
+}
+
+#closeButton {
+  z-index:999;
+  position:absolute;
+  right:0;
+}
+
+.barcode-polygon {
+  fill:rgba(85,240,40,0.5);          
+  stroke:green;
+  stroke-width:1;
+}
