@@ -18,3 +18,7 @@ If the browser does not support the API, the Dynamsoft Barcode Reader polyfill w
 
 Check out this repo to learn more: <https://github.com/xulihang/barcode-detector-polyfill>.
 
+## Blog
+
+[Build a Web QR Code Scanner using the Barcode Detection API](https://www.dynamsoft.com/codepool/web-qr-code-scanner-barcode-detection-api.html)
+
